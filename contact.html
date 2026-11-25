@@ -67,15 +67,17 @@
           <p class="contact-bottom-note">Please do not send passwords, full payment-card details, or sensitive identity or banking information by ordinary email or through this demonstration form.</p>
         </div>
 
-        <form class="contact-form" id="contact-form" data-demo-form>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xaeoagda" method="POST">
           <h2>Send an enquiry</h2>
           <p>Tell us a little about what you would like to discuss.</p>
+          <input type="hidden" name="_subject" value="New Gusto Capital website enquiry">
           <label>Full name<input required name="name" placeholder="Your full name" autocomplete="name"></label>
           <label>Email address<input required type="email" name="email" placeholder="you@example.com" autocomplete="email"></label>
+          <label>Phone number <span class="form-note">(optional)</span><input type="tel" name="phone" placeholder="Your phone number" autocomplete="tel"></label>
           <label>Enquiry type<select name="type"><option>General enquiry</option><option>Investment information</option><option>Grant program information</option><option>Partnership</option></select></label>
           <label>Message<textarea required name="message" placeholder="Tell us how we can help..."></textarea></label>
           <button class="btn btn-dark" type="submit">Send enquiry ↗</button>
-          <p class="form-note">Demonstration form only: messages are not transmitted or stored. Contact us directly by phone or email.</p>
+          <p class="form-note">Your enquiry will be sent securely to our team. Please do not include passwords, payment-card details, or sensitive identity or banking information.</p>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </div>
@@ -97,5 +99,49 @@
     </div>
   </footer>
   <script src="assets/script.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      const status = form.querySelector('.form-status');
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const originalLabel = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        status.textContent = 'Sending your enquiry…';
+        status.setAttribute('role', 'status');
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (!response.ok) {
+            let message = 'We could not send your enquiry. Please try again or email us directly.';
+            try {
+              const result = await response.json();
+              if (result.errors && result.errors.length) message = result.errors.map(error => error.message).join(' ');
+            } catch (_) {}
+            throw new Error(message);
+          }
+          form.reset();
+          status.textContent = 'Thank you. Your enquiry has been sent successfully.';
+          status.classList.add('success');
+        } catch (error) {
+          status.textContent = error.message || 'Something went wrong. Please try again.';
+          status.classList.remove('success');
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = originalLabel;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
