@@ -1,1 +1,101 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact | Gusto Capital</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/styles.css"></head><body><div class="announcement">Gusto Capital <span>•</span> We would be glad to hear from you <a href="index.html">Return home ↗</a></div><header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">G</span><span>GUSTO<span class="brand-light"> CAPITAL</span><small>CAPITAL • OPPORTUNITY • IMPACT</small></span></a><button class="menu-toggle" aria-label="Open navigation">☰</button><nav class="main-nav"><a href="index.html">Home</a><a href="investments.html">Investments</a><a href="grants.html">Grants</a><a href="about.html">About</a><a class="active" href="contact.html">Contact</a></nav><div class="header-actions"><a class="btn btn-dark" href="contact.html">Get started ↗</a></div></header><main><section class="page-hero"><div class="wrap"><div class="eyebrow light">CONTACT OUR TEAM</div><h1>Let's start a<br><em>conversation.</em></h1><p>Send a general enquiry and let us know whether you are interested in investment information, grant program details or another matter.</p></div></section><section class="content-section wrap"><div class="content-grid"><div><div class="section-kicker">GET IN TOUCH</div><h2>How can we help?</h2><p>Use the form to describe your enquiry. Before publishing, connect this form to a secure service such as Formspree, Jotform or your own backend, and add your verified business contact details and privacy notice.</p><div class="info-cards" style="grid-template-columns:1fr"><article class="info-card"><h3>General enquiries</h3><p>Add your official business email, telephone number and registered office address here once confirmed.</p></article></div></div><form class="contact-form" data-demo-form><label>Full name<input required name="name" placeholder="Your full name"></label><label>Email address<input required type="email" name="email" placeholder="you@example.com"></label><label>Enquiry type<select name="type"><option>General enquiry</option><option>Investment information</option><option>Grant program information</option><option>Partnership</option></select></label><label>Message<textarea required name="message" placeholder="Tell us how we can help..."></textarea></label><button class="btn btn-dark" type="submit">Send enquiry ↗</button><p class="form-note">Demo only: this form does not transmit or store your information.</p><p class="form-status" aria-live="polite"></p></form></div></section></main><footer class="site-footer"><div class="wrap"><div class="footer-main"><div class="footer-brand"><a class="brand brand-footer" href="index.html"><span class="brand-mark">G</span><span>GUSTO<span class="brand-light"> CAPITAL</span><small>CAPITAL • OPPORTUNITY • IMPACT</small></span></a><p>Connecting people, businesses and capital with a focus on opportunity and long-term progress.</p></div><div><h4>Explore</h4><a href="investments.html">Investments</a><a href="grants.html">Grants & funding</a></div><div><h4>Company</h4><a href="about.html">About us</a><a href="contact.html">Contact</a></div><div><h4>Enquiries</h4><p>Use the contact form to reach the appropriate team.</p></div></div><div class="footer-legal"><p>Do not submit sensitive personal, banking, tax or identity information through this demonstration form.</p><div class="footer-bottom"><span>© <span id="year"></span> Gusto Capital.</span><span><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclosures</a></span></div></div></div></footer><script src="assets/script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Gusto Capital by phone, email or mail, or send our team an enquiry.">
+  <title>Contact | Gusto Capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .contact-info-heading{font:600 30px/1.2 Manrope,sans-serif;letter-spacing:-.035em;margin:8px 0 12px;color:var(--ink)}
+    .contact-intro{font-size:13px;line-height:1.85;color:var(--muted);max-width:510px}
+    .contact-details{display:grid;gap:13px;margin-top:27px}
+    .contact-detail{display:grid;grid-template-columns:48px 1fr;gap:15px;align-items:center;padding:17px 18px;border:1px solid var(--line);background:#fff}
+    .contact-detail-icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#f0f3eb;color:var(--green);font-size:20px}
+    .contact-detail h3{font:700 13px Manrope,sans-serif;color:var(--green);margin:0 0 4px}
+    .contact-detail p,.contact-detail a{font-size:13px;color:var(--muted);line-height:1.6;margin:0;overflow-wrap:anywhere}
+    .contact-detail a:hover{color:var(--green);text-decoration:underline}
+    .contact-form{align-self:stretch}
+    .contact-form h2{font:600 25px Manrope;margin:0 0 4px;color:var(--ink)}
+    .contact-form>p{font-size:12px;line-height:1.7;color:var(--muted);margin:0 0 5px}
+    .contact-form .form-note{font-size:10px}
+    .contact-bottom-note{font-size:11px;line-height:1.7;color:var(--muted);margin-top:18px}
+    @media(max-width:650px){.contact-info-heading{font-size:27px}.contact-detail{padding:14px}}
+  </style>
+</head>
+<body>
+  <div class="announcement">Gusto Capital <span>•</span> We would be glad to hear from you <a href="index.html">Return home ↗</a></div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">G</span><span>GUSTO<span class="brand-light"> CAPITAL</span><small>CAPITAL • OPPORTUNITY • IMPACT</small></span></a>
+    <button class="menu-toggle" aria-label="Open navigation">☰</button>
+    <nav class="main-nav"><a href="index.html">Home</a><a href="investments.html">Investments</a><a href="grants.html">Grants</a><a href="about.html">About</a><a class="active" href="contact.html">Contact</a></nav>
+    <div class="header-actions"><a class="btn btn-dark" href="#contact-form">Get in touch ↗</a></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="eyebrow light">CONTACT OUR TEAM</div>
+        <h1>Let's start a<br><em>conversation.</em></h1>
+        <p>Whether you are exploring investment information, grant funding initiatives or a potential partnership, we welcome your enquiry.</p>
+      </div>
+    </section>
+
+    <section class="content-section wrap">
+      <div class="content-grid">
+        <div>
+          <div class="section-kicker">GET IN TOUCH</div>
+          <h2 class="contact-info-heading">Contact Information</h2>
+          <p class="contact-intro">Feel free to contact Gusto Capital using the details below. Our team welcomes general questions and enquiries about our organization and areas of focus.</p>
+          <div class="contact-details">
+            <article class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true">☎</span>
+              <div><h3>Phone No</h3><a href="tel:+16602213016">+1 660-221-3016</a></div>
+            </article>
+            <article class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true">✉</span>
+              <div><h3>Email Address</h3><a href="mailto:info@gustocapitals.com">info@gustocapitals.com</a></div>
+            </article>
+            <article class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true">⌖</span>
+              <div><h3>Location</h3><a href="https://www.google.com/maps/search/?api=1&query=525%2020th%20Street%2C%20San%20Francisco%2C%20CA%2094107" target="_blank" rel="noopener">525 20th Street, San Francisco, CA 94107</a></div>
+            </article>
+          </div>
+          <p class="contact-bottom-note">Please do not send passwords, full payment-card details, or sensitive identity or banking information by ordinary email or through this demonstration form.</p>
+        </div>
+
+        <form class="contact-form" id="contact-form" data-demo-form>
+          <h2>Send an enquiry</h2>
+          <p>Tell us a little about what you would like to discuss.</p>
+          <label>Full name<input required name="name" placeholder="Your full name" autocomplete="name"></label>
+          <label>Email address<input required type="email" name="email" placeholder="you@example.com" autocomplete="email"></label>
+          <label>Enquiry type<select name="type"><option>General enquiry</option><option>Investment information</option><option>Grant program information</option><option>Partnership</option></select></label>
+          <label>Message<textarea required name="message" placeholder="Tell us how we can help..."></textarea></label>
+          <button class="btn btn-dark" type="submit">Send enquiry ↗</button>
+          <p class="form-note">Demonstration form only: messages are not transmitted or stored. Contact us directly by phone or email.</p>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-brand"><a class="brand brand-footer" href="index.html"><span class="brand-mark">G</span><span>GUSTO<span class="brand-light"> CAPITAL</span><small>CAPITAL • OPPORTUNITY • IMPACT</small></span></a><p>Connecting people, businesses and capital with a focus on opportunity and long-term progress.</p></div>
+        <div><h4>Explore</h4><a href="investments.html">Investments</a><a href="grants.html">Grants &amp; funding</a></div>
+        <div><h4>Company</h4><a href="about.html">About us</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact information</h4><p><a href="tel:+16602213016">+1 660-221-3016</a><br><a href="mailto:info@gustocapitals.com">info@gustocapitals.com</a></p></div>
+      </div>
+      <div class="footer-legal">
+        <p>Website information is provided for general informational purposes. Do not send sensitive personal, banking, tax or identity information through this demonstration form.</p>
+        <div class="footer-bottom"><span>© <span id="year"></span> Gusto Capital.</span><span><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclosures</a></span></div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>
